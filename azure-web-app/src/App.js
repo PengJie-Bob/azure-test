@@ -1,7 +1,15 @@
+import React from 'react';
+import './App.css';
+import EmailForm from './Comp/EmailForm';
+
 function App() {
   return (
     <div className="App">
-      <h1>This is a test site for Azure free services</h1>
+      <header className="App-header">
+        <h1>Test Site For Azure Webservices</h1>
+      </header>
+      
+      <EmailForm />
     </div>
   );
 }
