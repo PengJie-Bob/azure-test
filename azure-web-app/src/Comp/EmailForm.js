@@ -17,7 +17,7 @@ const EmailForm = () => {
       return;
     }
 
-    const formData = { name, email, message };
+    const formData = { subject:name, to:email, message:message };
 
     try {
       // Send the form data to Azure Function API
