@@ -17,7 +17,7 @@ const EmailForm = () => {
       return;
     }
 
-    const formData = { subject:name, to:email, message:message };
+    const formData = { subject: name, to: email, message: message };
 
     try {
       // Send the form data to Azure Function API
@@ -46,13 +46,13 @@ const EmailForm = () => {
   };
 
   return (
-    <div>
-      <h1>Contact Yourself</h1>
-      <p>Sends an email to the provided address with the message</p>
-      {status && <p>{status}</p>}
+    <div className="email-form-container">
+      <h1 className="form-title">Contact Yourself</h1>
+      <p className="form-description">Send an email to the provided address with your message.</p>
+      {status && <p className="status-message">{status}</p>}
 
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className='email-form' onSubmit={handleSubmit}>
+        <div className="input-group">
           <label htmlFor="name">Name</label>
           <input 
             type="text" 
@@ -60,10 +60,11 @@ const EmailForm = () => {
             value={name} 
             onChange={(e) => setName(e.target.value)} 
             required
+            placeholder="Enter your name"
           />
         </div>
 
-        <div>
+        <div className="input-group">
           <label htmlFor="email">Target Email</label>
           <input 
             type="email" 
@@ -71,20 +72,22 @@ const EmailForm = () => {
             value={email} 
             onChange={(e) => setEmail(e.target.value)} 
             required
+            placeholder="Enter recipient's email"
           />
         </div>
 
-        <div>
+        <div className="input-group">
           <label htmlFor="message">Message</label>
           <textarea 
             id="message" 
             value={message} 
             onChange={(e) => setMessage(e.target.value)} 
             required
+            placeholder="Write your message here..."
           ></textarea>
         </div>
 
-        <button type="submit">Send Message</button>
+        <button className="submit-button" type="submit">Send Message</button>
       </form>
     </div>
   );
